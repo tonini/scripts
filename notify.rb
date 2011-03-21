@@ -12,7 +12,7 @@ class Notify
     @command = args.join(' ')
     show_help if args.empty?
     execute(args)
-    notify unless execution_in_time?
+    notify unless executed_in_time?
   end
 
   private
@@ -31,7 +31,7 @@ class Notify
     end
   end
 
-  def execution_in_time?
+  def executed_in_time?
     @execution_time > MINIMUM_NOTIFY_TIME ? false : true
   end
 
